@@ -1,0 +1,3 @@
+ID: 1 Name: Apple Chinese: 11 English: 22 Mathematics: 33 Average: 22.0
+ID: 2 Name: Banana Chinese: 44 English: 55 Mathematics: 66 Average: 55.0
+ID: 3 Name: Citrus Chinese: 77 English: 88 Mathematics: 99 Average: 88.0
