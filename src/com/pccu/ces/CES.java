@@ -1,6 +1,7 @@
 package com.pccu.ces;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -16,19 +17,16 @@ public class CES {
 		try {
 			f = new FileWriter(filepath);
 			
-			Iterator<Student> it = new Iterator<Student>(list);
-			while(it.hasNext()) {
-				
-				Student s = it.next();
+			for (Student it: list) {
+				Student s = it;
 				
 				f.write("ID: " + s.getId() + " " +
 						"Name: " + s.getName() + " " +
 						"Chinese: " + s.getChi() + " " +
 						"English: " + s.getEng() + " " +
 						"Mathematics: " + s.getMath() + " " +
-						"Average: " + s.getAvg()
+						"Average: " + s.getAvg() + "\n"
 						);
-				
 			}
 			
 		}
@@ -36,7 +34,9 @@ public class CES {
 			e.printStackTrace();
 		}
 		finally {
-			f.close();
+			try { f.close(); }
+			catch (IOException e) { e.printStackTrace(); }
+			System.out.println("Complete.");
 		}
 		
 	}
